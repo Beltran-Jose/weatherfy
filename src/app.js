@@ -5,6 +5,7 @@ const forecast = require('./utils/forecast');
 
 //---LOAD EXPRESS---//
 const app = express();
+const port = process.env.PORT || 3000;
 
 //---PATHS---//
 const public = path.join(__dirname, '../public');
@@ -52,6 +53,6 @@ app
     .get('*', (req, res) => {
         res.send('Page not found.');
     })
-    .listen(3000, () => {
+    .listen(port, () => {
         console.log('Server has started.');
     });
